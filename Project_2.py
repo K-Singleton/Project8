@@ -10,7 +10,7 @@ import os
 
 # --- PAGE SETUP ---
 st.set_page_config(
-    page_title="Analytics Dashboard",
+    page_title="Maternal Mortality Dashboard",
     page_icon="📊",
     layout="wide"
 )
