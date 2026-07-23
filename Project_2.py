@@ -15,7 +15,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- CUSTOM CSS FOR SPACING & WRITE-UP CARDS ---
 st.markdown("""
     <style>
     .chart-section {
@@ -198,18 +197,17 @@ with center:
     fig_dist.patch.set_alpha(0.0)
     ax_dist.set_facecolor('none')
 
-    # Plot histogram with black borders around buckets
+    
     sns.histplot(
         mmr_age_40['deviation'],
         kde=True,
-        color='#FFA0A0',   # Matching light pink shade
-        alpha=1.0,         # Fully opaque
-        edgecolor='black', # Distinct black line around each bar
+        color='#FFA0A0',   
+        alpha=1.0,         
+        edgecolor='black', 
         linewidth=1.0,
         ax=ax_dist,
     )
     
-    # Customize the KDE curve to be white and render IN FRONT (zorder=5)
     if ax_dist.lines:
         kde_line = ax_dist.lines[0]
         kde_line.set_color('white')
@@ -328,8 +326,7 @@ with st.container():
                     )
                 )
 
-            # Keep trace order identical in every frame so Plotly updates the
-            # lines and highlighted points reliably.
+       
             return line_traces + current_point_traces
 
         def x_axis_range(frame_index):
